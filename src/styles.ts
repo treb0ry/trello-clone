@@ -53,3 +53,10 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
     background-color: #ffffff52;
   }
 `;
+export const NewItemContainer = styled.div`
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+`;
