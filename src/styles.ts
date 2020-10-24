@@ -54,7 +54,7 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
   }
 `;
 
-export const NewItemContainer = styled.div`
+export const NewItemFormContainer = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
