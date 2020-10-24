@@ -1,6 +1,7 @@
 import React from "react";
 import { Column } from "./Column";
 import { Card } from "./Card";
+import { AddNewItem } from "./AddNewItem";
 import { AppContainer } from "./styles";
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Column text="Done">
         <Card text="Begin to use static typing"></Card>
       </Column>
+      <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
   );
 }
