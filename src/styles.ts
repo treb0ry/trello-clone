@@ -58,8 +58,8 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
   text-align: left;
   transition: background 85ms ease-in;
   width: 100%;
-  &hover {
-    background-color: #ffffff52;
+  &:hover {
+    background-color: #e8c78b;
   }
 `;
 
@@ -72,13 +72,17 @@ export const NewItemFormContainer = styled.div`
 `;
 
 export const NewItemButton = styled.button`
-  background-color: #5aac44;
+  background-color: #423c6d;
   border-radius: 3px;
   border: none;
   box-shadow: none;
   color: #fff;
   padding: 6px 12px;
   text-align: center;
+  transition: background 85ms ease-in;
+  &:hover {
+    background-color: #2b236b;
+  }
 `;
 
 export const NewItemInput = styled.input`
