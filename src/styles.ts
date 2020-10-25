@@ -9,7 +9,7 @@ interface DragPreviewContainerProps {
 
 export const AppContainer = styled.div`
   align-items: flex-start;
-  background-color: #3179ba;
+  background-color: #94b5c2;
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -30,6 +30,7 @@ export const ColumnContainer = styled(DragPreviewContainer)`
   border-radius: 3px;
   padding: 8px 8px;
   flex-grow: 0;
+  box-shadow: black 2px 2px 5px 0px;
 `;
 
 export const ColumnTitle = styled.div`
@@ -37,21 +38,20 @@ export const ColumnTitle = styled.div`
   font-weight: bold;
 `;
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(DragPreviewContainer)`
   background-color: #fff;
   cursor: pointer;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   max-width: 300px;
   border-radius: 3px;
-  box-shadow: #091e4240 0px 1px 0px 0px;
 `;
 
 export const AddItemButton = styled.button<AddItemButtonProps>`
-  background-color: #ffffff3d;
+  background-color: #eadcc1;
   border-radius: 3px;
   border: none;
-  color: ${(props) => (props.dark ? "#000" : "#fff")};
+  color: #000;
   cursor: pointer;
   max-width: 300px;
   padding: 10px 12px;
