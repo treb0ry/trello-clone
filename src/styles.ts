@@ -73,6 +73,9 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
   &:hover {
     background-color: #e8c78b;
   }
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const NewItemFormContainer = styled.div`
@@ -94,6 +97,9 @@ export const NewItemButton = styled.button`
   transition: background 85ms ease-in;
   &:hover {
     background-color: #2b236b;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
   }
 `;
 
