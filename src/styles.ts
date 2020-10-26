@@ -30,12 +30,17 @@ export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
 export const ColumnContainer = styled(DragPreviewContainer)`
   background-color: #ebecf0;
   width: 300px;
-  min-height: 40px;
   margin-right: 20px;
   border-radius: 3px;
   padding: 8px 8px;
   flex-grow: 0;
   box-shadow: black 2px 2px 5px 0px;
+  @media (max-width: 768px) {
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 `;
 
 export const ColumnTitle = styled.div`
