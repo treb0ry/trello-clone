@@ -7,6 +7,7 @@ import { useItemDrag } from "./utils/useItemDrag";
 import { useDrop } from "react-dnd";
 import { DragItem } from "./DragItem";
 import { isHidden } from "./utils/isHidden";
+import { TrashIcon } from "./TrashIcon";
 interface ColumnProps {
   text: string;
   index: number;
@@ -52,7 +53,10 @@ export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
       isPreview={isPreview}
       isHidden={isHidden(isPreview, state.draggedItem, "COLUMN", id)}
     >
-      <ColumnTitle>{text}</ColumnTitle>
+      <ColumnTitle>
+        {text}
+        <TrashIcon listId={id} />
+      </ColumnTitle>
       {state.lists[index].tasks.map((task, i) => (
         <Card text={task.text} key={task.id} id={task.id} columnId={id} index={i} />
       ))}

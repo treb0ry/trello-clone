@@ -40,7 +40,8 @@ type Action =
         sourceColumn: string;
         targetColumn: string;
       };
-    };
+    }
+  | { type: "DELETE_LIST"; payload: { listId: string } };
 
 const appData: AppState = {
   draggedItem: undefined,
@@ -66,12 +67,18 @@ const appData: AppState = {
 const appStateReducer = (state: AppState, action: Action) => {
   switch (action.type) {
     case "ADD_LIST": {
+      if (action.payload.length === 0) {
+        return { ...state };
+      }
       return {
         ...state,
         lists: [...state.lists, { id: nanoid(), text: action.payload, tasks: [] }],
       };
     }
     case "ADD_TASK": {
+      if (action.payload.text.length === 0) {
+        return { ...state };
+      }
       const targetLaneIndex = findItemIndexById(state.lists, action.payload.listId);
       const newState = { ...state };
       newState.lists[targetLaneIndex].tasks.push({
@@ -95,6 +102,10 @@ const appStateReducer = (state: AppState, action: Action) => {
     }
     case "SET_DRAGGED_ITEM": {
       return { ...state, draggedItem: action.payload };
+    }
+    case "DELETE_LIST": {
+      const newLists = state.lists.filter((list) => list.id !== action.payload.listId);
+      return { ...state, lists: newLists };
     }
     default: {
       return state;

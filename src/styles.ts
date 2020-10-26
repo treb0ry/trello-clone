@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 interface AddItemButtonProps {
   dark?: boolean;
 }
@@ -36,6 +36,8 @@ export const ColumnContainer = styled(DragPreviewContainer)`
 export const ColumnTitle = styled.div`
   padding: 6px 16px 12px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const CardContainer = styled(DragPreviewContainer)`
@@ -102,4 +104,40 @@ export const CustomDragLayerContainer = styled.div`
   position: fixed;
   top: 0;
   z-index: 100;
+`;
+const trashAnimation = keyframes`
+  0%,50%,100%{
+    transform:rotate(0deg)
+    
+  }
+  25%{
+    transform:rotate(15deg)
+  }
+  75%{
+    transform:rotate(-15deg)
+  }
+`;
+const trashCapAnimation = keyframes`
+  0%,100%{
+    transform:translateY(0)
+  }
+  1%,99%{
+    transform:translateY(-40px)
+  }
+`;
+
+export const Svg = styled.svg`
+  width: 25px;
+  transition: color 85ms;
+  &:hover {
+    color: #efaeae;
+    path:nth-child(3) {
+      animation: ${trashCapAnimation} 200ms linear;
+    }
+    path:nth-child(4) {
+      animation: ${trashCapAnimation} 200ms linear;
+    }
+
+    animation: ${trashAnimation} 200ms linear;
+  }
 `;
