@@ -15,6 +15,11 @@ export const AppContainer = styled.div`
   height: 100%;
   padding: 20px;
   width: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 `;
 
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
